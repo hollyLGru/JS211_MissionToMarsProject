@@ -10,6 +10,22 @@ const jobTypes = {
 };
 
 // Your code will go here
+class Ship {
+  constructor (name, type, ability, crew){
+    this.name= name;
+    this.type= type;
+    this.ability = ability;
+    this.crew = [];
+  }
+  missionStatement() {
+    if (this.crew.length == 0) {return "Can't perform a mission yet."}
+    else {return this.ability}
+
+    // the ship needs to be at zero capacity (empty) to fit a crew member 
+
+  }
+}
+
 
 class CrewMember {
   constructor(Name, job, specialSkill, ship) {
@@ -20,23 +36,11 @@ class CrewMember {
         }
         // make sure the crew member can enter the ship? ASK FOR HELP!!!! 
         enterShip(Ship) {
-          // c
-
+        this.ship = Ship;
+        Ship.crew.push(this);
               }
 }
 
-class Ship {
-  constructor (name, type, ability, crew){
-    this.name= name;
-    this.type= type;
-    this.ability = ability;
-    this.crew = crew;
-  }
-  missionStatement() {
-    return
-    // the ship needs to be at zero capacity (empty) to fit a crew member 
-  }
-}
 
 // need help with enterShip, missionStatement and what the heck is crewMember1 vs crewMember2
 
